@@ -18,6 +18,8 @@ dbt docs generate
 dbt docs serve
 ```
 
+![image](https://github.com/user-attachments/assets/b898eecf-bd1e-48d3-b4c6-03223b08b7d0)
+
 
 <img src="docs/img/logo.png" align="right" />
 
