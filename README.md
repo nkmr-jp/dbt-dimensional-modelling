@@ -36,7 +36,8 @@ dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
 ```
 
 https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
-<img width="1598" alt="image" src="https://github.com/user-attachments/assets/52f64111-03fa-43d8-8590-4841a3991f26">
+<img width="2048" alt="image" src="https://github.com/user-attachments/assets/50c44623-54b8-4b21-99d5-b49f1d036482">
+
 
 
 # ER図更新
