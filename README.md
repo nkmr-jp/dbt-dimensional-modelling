@@ -32,12 +32,19 @@ dbterd run
 ```sh
 npm install -g dbdocs
 dbdocs login
-dbdocs build "./target/output.dbml"
+dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
 ```
 
 https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
 <img width="1598" alt="image" src="https://github.com/user-attachments/assets/52f64111-03fa-43d8-8590-4841a3991f26">
 
+
+# ER図更新
+```sh
+dbt docs generate
+dbterd run
+dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
+```
 
 
 
