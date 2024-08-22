@@ -36,7 +36,9 @@ dbdocs build "./target/output.dbml"
 ```
 
 https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
-![img.png](img.png)
+<img width="1598" alt="image" src="https://github.com/user-attachments/assets/52f64111-03fa-43d8-8590-4841a3991f26">
+
+
 
 
 <img src="docs/img/logo.png" align="right" />
