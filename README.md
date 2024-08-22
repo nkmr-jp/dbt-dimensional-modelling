@@ -1,7 +1,7 @@
 # 実行コマンド一覧
 
 各種インストール
-```
+```sh
 brew install duckdb
 python -m venv .venv
 source .venv/bin/activate.fish
@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 dbtコマンド実行
-```
+```sh
 cd adventureworks/
 dbt deps
 dbt seed --target duckdb
@@ -19,6 +19,24 @@ dbt docs serve
 ```
 
 ![image](https://github.com/user-attachments/assets/b898eecf-bd1e-48d3-b4c6-03223b08b7d0)
+
+
+# ER図作成
+
+```sh
+pip install dbterd --upgrade
+pip install dbt-artifacts-parser --upgrade
+dbterd run
+```
+
+```sh
+npm install -g dbdocs
+dbdocs login
+dbdocs build "./target/output.dbml"
+```
+
+https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
+![img.png](img.png)
 
 
 <img src="docs/img/logo.png" align="right" />
