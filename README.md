@@ -1,3 +1,24 @@
+# 実行コマンド一覧
+
+各種インストール
+```
+brew install duckdb
+python -m venv .venv
+source .venv/bin/activate.fish
+pip install -r requirements.txt
+```
+
+dbtコマンド実行
+```
+cd adventureworks/
+dbt deps
+dbt seed --target duckdb
+dbt run
+dbt docs generate
+dbt docs serve
+```
+
+
 <img src="docs/img/logo.png" align="right" />
 
 # dbt dimensional modelling tutorial
