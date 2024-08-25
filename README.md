@@ -47,6 +47,59 @@ dbterd run
 dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
 ```
 
+# lightdashを構築してデプロイする手順
+
+## lightdashをRenderにデプロイ
+
+[Render](https://render.com) のアカウントを作成してログイン。以下のボタンをクリックしてデプロイ。
+
+<div>
+<a href="https://render.com/deploy?repo=https://github.com/lightdash/lightdash-deploy-render">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
+</a>
+
+See: https://github.com/lightdash/lightdash
+
+## lightdashにdbtの各modelをデプロイ
+
+コマンドをインストールしてログイン
+```sh
+npm install -g @lightdash/cli
+lightdash login https://{{ lightdash_domain }} --token my-super-secret-token
+```
+
+プロジェクト作成してデプロイ（初回のみ）
+```sh
+lightdash dbt run
+lightdash deploy --create dbt-dimensional-modelling-lightdash
+```
+
+モデルを変更した際に動きを確認する。
+```sh
+lightdash preview
+```
+
+デプロイ(2回目以降)
+```sh
+# 他にもプロジェクトがある場合は、プロジェクト名を指定
+lightdash config set-project --name dbt-dimensional-modelling-lightdash
+lightdash dbt run
+lightdash deploy
+```
+
+## サービスアカウントキーをlightdashに登録
+
+以下の権限でサービスアカウントを作成。サービスアカウントキーを作成してlightdashに登録。
+
+```shell
+roles/bigquery.dataViewer
+roles/bigquery.jobUser
+```
+
+See: https://docs.lightdash.com/get-started/setup-lightdash/connect-project#bigquery
+See: https://docs.lightdash.com/get-started/setup-lightdash/get-project-lightdash-ready
+
+
 
 
 <img src="docs/img/logo.png" align="right" />
