@@ -52,10 +52,10 @@ dbterd run
 ```sh
 npm install -g dbdocs
 dbdocs login
-dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
+dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling-lightdash"
 ```
 
-https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
+https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling-lightdash?view=relationships
 <img width="2048" alt="image" src="https://github.com/user-attachments/assets/50c44623-54b8-4b21-99d5-b49f1d036482">
 
 
@@ -63,7 +63,7 @@ https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
 ```sh
 dbt docs generate
 dbterd run
-dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
+dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling-lightdash"
 ```
 
 ## lightdashを構築してデプロイする手順
