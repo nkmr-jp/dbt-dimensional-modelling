@@ -1,18 +1,38 @@
-# 実行コマンド一覧
+# dbt-jaffle-shop-lightdash
 
-各種インストール
+dbt-dimensional-modellingを `dbt-core` と`BigQuery` と `ligthdash` で動かすために各種設定を修正して、手順をまとめました。
+
+## dbt-coreとBigQueryで実行する手順
+
+gcloud auth でのログイン。 (CloudSDKのインストールがまだの場合は [こちら](https://cloud.google.com/sdk/docs/install-sdk?hl=ja) を参考に設定。)
 ```sh
-brew install duckdb
-python -m venv .venv
-source .venv/bin/activate.fish
-pip install -r requirements.txt
+gcloud auth login
+gcloud auth application-default login
 ```
 
-dbtコマンド実行
+### 各種インストール
 ```sh
-cd adventureworks/
+python -m venv .venv
+source .venv/bin/activate.fish
+pip install dbt-core dbt-bigquery
+```
+
+### テンプレートからプロファイルをコピー
+```sh
+cp profiles_template.yml profiles.yml
+```
+
+### profiles.yml を編集
+`<your-project-id>`に自分のGoogleCloudのプロジェクトIDを書く。
+```yml
+project: <your-project-id>
+```
+
+### dbtのコマンド実行
+```sh
+cd ./adventureworks
 dbt deps
-dbt seed --target duckdb
+dbt seed
 dbt run
 dbt docs generate
 dbt docs serve
@@ -21,7 +41,7 @@ dbt docs serve
 ![image](https://github.com/user-attachments/assets/b898eecf-bd1e-48d3-b4c6-03223b08b7d0)
 
 
-# ER図作成
+## ER図作成
 
 ```sh
 pip install dbterd --upgrade
@@ -39,17 +59,16 @@ https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
 <img width="2048" alt="image" src="https://github.com/user-attachments/assets/50c44623-54b8-4b21-99d5-b49f1d036482">
 
 
-
-# ER図更新
+## ER図更新
 ```sh
 dbt docs generate
 dbterd run
 dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
 ```
 
-# lightdashを構築してデプロイする手順
+## lightdashを構築してデプロイする手順
 
-## lightdashをRenderにデプロイ
+### lightdashをRenderにデプロイ
 
 [Render](https://render.com) のアカウントを作成してログイン。以下のボタンをクリックしてデプロイ。
 
@@ -60,7 +79,7 @@ dbdocs build "./target/output.dbml" --project "dbt-dimensional-modelling"
 
 See: https://github.com/lightdash/lightdash
 
-## lightdashにdbtの各modelをデプロイ
+### lightdashにdbtの各modelをデプロイ
 
 コマンドをインストールしてログイン
 ```sh
@@ -87,7 +106,7 @@ lightdash dbt run
 lightdash deploy
 ```
 
-## サービスアカウントキーをlightdashに登録
+### サービスアカウントキーをlightdashに登録
 
 以下の権限でサービスアカウントを作成。サービスアカウントキーを作成してlightdashに登録。
 

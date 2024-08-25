@@ -1,0 +1,12 @@
+adventureworks:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: <your-project-id>
+      dataset: dbt_dimensional_modelling_lightdash
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
