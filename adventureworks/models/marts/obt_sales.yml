@@ -1,34 +1,190 @@
 version: 2
-
 models:
   - name: obt_sales
     columns:
-
       - name: sales_key
         description: The surrogate key of the fct sales
         tests:
           - not_null
           - unique
-
+        meta:
+          dimension:
+            type: string
       - name: salesorderid
         description: The natural key of the saleorderheader
         tests:
           - not_null
-
+        meta:
+          dimension:
+            type: number
       - name: salesorderdetailid
         description: The natural key of the salesorderdetail
         tests:
           - not_null
-
+        meta:
+          dimension:
+            type: number
       - name: unitprice
-        description: The unit price of the product 
+        description: The unit price of the product
         tests:
           - not_null
-
+        meta:
+          dimension:
+            type: number
       - name: orderqty
-        description: The quantity of the product 
+        description: The quantity of the product
         tests:
           - not_null
-
+        meta:
+          dimension:
+            type: number
       - name: revenue
-        description: The revenue obtained by multiplying unitprice and orderqty 
+        description: The revenue obtained by multiplying unitprice and orderqty
+        meta:
+          dimension:
+            type: number
+      - name: productid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: product_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: productnumber
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: color
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: class
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: product_subcategory_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: product_category_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: customerid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: businessentityid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fullname
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: storebusinessentityid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: storename
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: creditcardid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: cardtype
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: addressid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: city_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: state_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: country_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: order_status
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_status_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: date_day
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: prior_date_day
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: next_date_day
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: prior_year_date_day
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: prior_year_over_year_date_day
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: day_of_week
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: day_of_week_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: day_of_month
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: day_of_year
+        description: ""
+        meta:
+          dimension:
+            type: number

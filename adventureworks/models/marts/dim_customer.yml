@@ -1,5 +1,4 @@
 version: 2
-
 models:
   - name: dim_customer
     columns:
@@ -8,19 +7,36 @@ models:
         tests:
           - unique
           - not_null
-
+        meta:
+          dimension:
+            type: string
       - name: customerid
         description: The natural key of the customer
         tests:
           - not_null
           - unique
-          
+        meta:
+          dimension:
+            type: number
       - name: fullname
-        description: The customer name. Adopted as customer_fullname when person name is not null.
-
+        description: >-
+          The customer name. Adopted as customer_fullname when person name is
+          not null.
+        meta:
+          dimension:
+            type: string
       - name: businessentityid
-      
+        description: ""
+        meta:
+          dimension:
+            type: number
       - name: storebusinessentityid
-
+        description: ""
+        meta:
+          dimension:
+            type: number
       - name: storename
         description: The store name.
+        meta:
+          dimension:
+            type: string
