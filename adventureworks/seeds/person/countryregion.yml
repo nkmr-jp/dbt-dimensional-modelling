@@ -5,6 +5,6 @@ seeds:
     config: 
       schema: person
       column_types: 
-        countryregioncode: varchar
+        countryregioncode: string
         modifieddate: timestamp
-        name: varchar
+        name: string

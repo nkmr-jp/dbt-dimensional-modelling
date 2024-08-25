@@ -6,5 +6,5 @@ seeds:
       schema: production
       column_types: 
         productcategoryid: integer
-        name: varchar
+        name: string
         modifieddate: timestamp

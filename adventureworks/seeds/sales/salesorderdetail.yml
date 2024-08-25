@@ -7,11 +7,11 @@ seeds:
       schema: sales
       column_types: 
         salesorderid: integer
-        orderqty: smallint
+        orderqty: integer
         salesorderdetailid: integer
         unitprice: numeric
         specialofferid: integer
         modifieddate: timestamp
-        rowguid: varchar
+        rowguid: string
         productid: integer
         unitpricediscount: numeric

@@ -6,12 +6,12 @@ seeds:
       schema: person
       column_types: 
         businessentityid: integer
-        title: varchar
-        firstname: varchar
-        middlename: varchar 
-        lastname: varchar
+        title: string
+        firstname: string
+        middlename: string 
+        lastname: string
         namestyle: boolean
-        suffix: varchar
+        suffix: string
         modifieddate: timestamp
-        rowguid: varchar
+        rowguid: string
         emailpromotion: integer

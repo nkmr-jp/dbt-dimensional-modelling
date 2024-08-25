@@ -7,11 +7,11 @@ seeds:
       column_types: 
         addressid: integer
         stateprovinceid: integer
-        city: varchar
-        addressline2: varchar 
+        city: string
+        addressline2: string 
         modifieddate: timestamp
-        rowguid: varchar
-        postalcode: varchar
-        spatiallocation: varchar
-        addressline1: varchar
+        rowguid: string
+        postalcode: string
+        spatiallocation: string
+        addressline1: string
 
