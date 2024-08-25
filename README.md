@@ -1,4 +1,8 @@
-# 実行コマンド一覧
+# dbt-dimensional-modelling
+
+Data-Engineer-Camp/dbt-dimensional-modelling をフォークして作成。動かすための各種コマンドをまとめました。また、relationsの設定を追加して、ER図作成の手順をまとめました。
+
+## 実行コマンド一覧
 
 各種インストール
 ```sh
@@ -21,7 +25,7 @@ dbt docs serve
 ![image](https://github.com/user-attachments/assets/b898eecf-bd1e-48d3-b4c6-03223b08b7d0)
 
 
-# ER図作成
+## ER図作成
 
 ```sh
 pip install dbterd --upgrade
@@ -40,7 +44,7 @@ https://dbdocs.io/nkmr-jp/dbt-dimensional-modelling?view=relationships
 
 
 
-# ER図更新
+## ER図更新
 ```sh
 dbt docs generate
 dbterd run
