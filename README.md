@@ -1,6 +1,8 @@
 # dbt-dimensional-modelling
 
-Data-Engineer-Camp/dbt-dimensional-modelling をフォークして作成。動かすための各種コマンドをまとめました。また、relationsの設定を追加して、ER図作成の手順をまとめました。
+Data-Engineer-Camp/dbt-dimensional-modelling をフォークして作成。
+ローカルで動作させるための各種コマンドをまとめました。
+また、relationsの設定を追加して、ER図作成の手順をまとめました。
 
 ## 実行コマンド一覧
 
