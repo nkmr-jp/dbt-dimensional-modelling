@@ -7,23 +7,14 @@ models:
         tests:
           - not_null
           - unique
-        meta:
-          dimension:
-            type: string
       - name: salesorderid
         description: The natural key of the saleorderheader
         tests:
           - not_null
-        meta:
-          dimension:
-            type: number
       - name: salesorderdetailid
         description: The natural key of the salesorderdetail
         tests:
           - not_null
-        meta:
-          dimension:
-            type: number
       - name: product_key
         description: The foreign key of the product
         tests:
@@ -31,9 +22,6 @@ models:
           - relationships:
               to: ref('dim_product')
               field: product_key
-        meta:
-          dimension:
-            type: string
       - name: customer_key
         description: The foreign key of the customer
         tests:
@@ -41,9 +29,6 @@ models:
           - relationships:
               to: ref('dim_customer')
               field: customer_key
-        meta:
-          dimension:
-            type: string
       - name: ship_address_key
         description: The foreign key of the shipping address
         tests:
@@ -51,9 +36,6 @@ models:
           - relationships:
               to: ref('dim_address')
               field: address_key
-        meta:
-          dimension:
-            type: string
       - name: creditcard_key
         description: >-
           The foreign key of the creditcard. If no creditcard exists, it was
@@ -63,9 +45,6 @@ models:
           - relationships:
               to: ref('dim_credit_card')
               field: creditcard_key
-        meta:
-          dimension:
-            type: string
       - name: order_date_key
         description: The foreign key of the order date
         tests:
@@ -73,9 +52,6 @@ models:
           - relationships:
               to: ref('dim_date')
               field: date_key
-        meta:
-          dimension:
-            type: string
       - name: order_status_key
         description: The foreign key of the order status
         tests:
@@ -83,25 +59,13 @@ models:
           - relationships:
               to: ref('dim_order_status')
               field: order_status_key
-        meta:
-          dimension:
-            type: string
       - name: unitprice
         description: The unit price of the product
         tests:
           - not_null
-        meta:
-          dimension:
-            type: number
-      - name: orderqty
+      - name: order_qty
         description: The quantity of the product
         tests:
           - not_null
-        meta:
-          dimension:
-            type: number
       - name: revenue
         description: The revenue obtained by multiplying unitprice and orderqty
-        meta:
-          dimension:
-            type: number
