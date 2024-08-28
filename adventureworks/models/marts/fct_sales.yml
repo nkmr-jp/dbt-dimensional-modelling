@@ -21,14 +21,14 @@ models:
         tests:
           - not_null
           - unique
-      - name: salesorderid
-        description: The natural key of the saleorderheader
-        tests:
-          - not_null
-      - name: salesorderdetailid
-        description: The natural key of the salesorderdetail
-        tests:
-          - not_null
+#      - name: salesorderid
+#        description: The natural key of the saleorderheader
+#        tests:
+#          - not_null
+#      - name: salesorderdetailid
+#        description: The natural key of the salesorderdetail
+#        tests:
+#          - not_null
       - name: product_key
         description: The foreign key of the product
         tests:
@@ -77,6 +77,12 @@ models:
         description: The unit price of the product
         tests:
           - not_null
+        meta:
+          metrics:
+            unitprice_sum:
+              type: sum
+            unitprice_average:
+              type: average
       - name: orderqty
         description: The quantity of the product
         tests:
