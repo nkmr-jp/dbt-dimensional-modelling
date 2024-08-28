@@ -81,9 +81,13 @@ models:
         description: The quantity of the product
         tests:
           - not_null
+        meta:
+          metrics:
+            orderqty_sum:
+              type: sum
       - name: revenue
         description: The revenue obtained by multiplying unitprice and orderqty
         meta:
           metrics:
-            total_revenue:
+            revenue_sum:
               type: sum
