@@ -1,6 +1,20 @@
 version: 2
 models:
   - name: fct_sales
+    meta:
+      joins:
+        - join: dim_product
+          sql_on: ${dim_product.product_key} = ${fct_sales.product_key}
+        - join: dim_customer
+          sql_on: ${dim_customer.customer_key} = ${fct_sales.customer_key}
+        - join: dim_address
+          sql_on: ${dim_address.address_key} = ${fct_sales.ship_address_key}
+        - join: dim_credit_card
+          sql_on: ${dim_credit_card.creditcard_key} = ${fct_sales.creditcard_key}
+        - join: dim_date
+          sql_on: ${dim_date.date_key} = ${fct_sales.order_date_key}
+        - join: dim_order_status
+          sql_on: ${dim_order_status.order_status_key} = ${fct_sales.order_status_key}
     columns:
       - name: sales_key
         description: The surrogate key of the fct sales
