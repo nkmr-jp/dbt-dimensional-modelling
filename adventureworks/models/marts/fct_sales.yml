@@ -36,6 +36,9 @@ models:
           - relationships:
               to: ref('dim_product')
               field: product_key
+        meta:
+          dimension:
+            hidden: true
       - name: customer_key
         description: The foreign key of the customer
         tests:
@@ -43,6 +46,9 @@ models:
           - relationships:
               to: ref('dim_customer')
               field: customer_key
+        meta:
+          dimension:
+            hidden: true
       - name: ship_address_key
         description: The foreign key of the shipping address
         tests:
@@ -50,6 +56,9 @@ models:
           - relationships:
               to: ref('dim_address')
               field: address_key
+        meta:
+          dimension:
+            hidden: true
       - name: creditcard_key
         description: >-
           The foreign key of the creditcard. If no creditcard exists, it was
@@ -59,6 +68,9 @@ models:
           - relationships:
               to: ref('dim_credit_card')
               field: creditcard_key
+        meta:
+          dimension:
+            hidden: true
       - name: order_date_key
         description: The foreign key of the order date
         tests:
@@ -66,6 +78,9 @@ models:
           - relationships:
               to: ref('dim_date')
               field: date_key
+        meta:
+          dimension:
+            hidden: true
       - name: order_status_key
         description: The foreign key of the order status
         tests:
@@ -73,6 +88,9 @@ models:
           - relationships:
               to: ref('dim_order_status')
               field: order_status_key
+        meta:
+          dimension:
+            hidden: true
       - name: unitprice
         description: The unit price of the product
         tests:
